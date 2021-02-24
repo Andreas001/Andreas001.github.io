@@ -13,6 +13,79 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="styles.css" rel="stylesheet" />
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- Functions -->
+        <script>
+            // Collapse Navbar
+            var navbarCollapse = function() {
+                if ($("#mainNav").offset().top > 100) {
+                    $("#mainNav").addClass("navbar-shrink");
+                } else {
+                    $("#mainNav").removeClass("navbar-shrink");
+                }
+            };
+            navbarCollapse();
+            $(window).scroll(navbarCollapse);
+
+            // Load work.html first
+            $(function (){
+                $("#page").load("work.html");
+            });
+
+            $(function(){
+                $("#work").click(function(){
+                    $.ajax({
+                        type: "post",
+                        url: "work.html",
+                        data: "",
+                        dataType: "html",
+                        beforeSend: function() {
+                            $("#page").html("");
+                        },
+                        success: function (response) {
+                            $("#page").html(response);
+                        }
+                    });
+                });
+
+                $("#about").click(function(){
+                    $.ajax({
+                        type: "post",
+                        url: "about.html",
+                        data: "",
+                        dataType: "html",
+                        beforeSend: function() {
+                            $("#page").html("");
+                        },
+                        success: function (response) {
+                            $("#page").html(response);
+                        }
+                    });
+                });
+
+                $("#contact").click(function(){
+                    $.ajax({
+                        type: "post",
+                        url: "contact.html",
+                        data: "",
+                        dataType: "html",
+                        beforeSend: function() {
+                            $("#page").html("");
+                        },
+                        success: function (response) {
+                            $("#page").html(response);
+                        }
+                    });
+                });
+            });
+        </script>
     </head>
 
     <body id="page-top">
@@ -66,76 +139,3 @@
         </div>
     </footer>
 </html>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- Functions -->
-<script>
-    // Collapse Navbar
-    var navbarCollapse = function() {
-        if ($("#mainNav").offset().top > 100) {
-            $("#mainNav").addClass("navbar-shrink");
-        } else {
-            $("#mainNav").removeClass("navbar-shrink");
-        }
-    };
-    navbarCollapse();
-    $(window).scroll(navbarCollapse);
-
-    // Load work.html first
-    $(function (){
-        $("#page").load("work.html");
-    });
-
-    $(function(){
-        $("#work").click(function(){
-            $.ajax({
-                type: "post",
-                url: "work.html",
-                data: "",
-                dataType: "html",
-                beforeSend: function() {
-                    $("#page").html("");
-                },
-                success: function (response) {
-                    $("#page").html(response);
-                }
-            });
-        });
-
-        $("#about").click(function(){
-            $.ajax({
-                type: "post",
-                url: "about.html",
-                data: "",
-                dataType: "html",
-                beforeSend: function() {
-                    $("#page").html("");
-                },
-                success: function (response) {
-                    $("#page").html(response);
-                }
-            });
-        });
-
-        $("#contact").click(function(){
-            $.ajax({
-                type: "post",
-                url: "contact.html",
-                data: "",
-                dataType: "html",
-                beforeSend: function() {
-                    $("#page").html("");
-                },
-                success: function (response) {
-                    $("#page").html(response);
-                }
-            });
-        });
-    });
-</script>
