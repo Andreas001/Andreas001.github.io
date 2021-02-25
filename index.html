@@ -27,10 +27,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1">
-                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" aria-current="page" id="work">Work</a>
+                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="about">About Me</a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
-                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="about">About</a>
+                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" aria-current="page" id="work">Work</a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
                             <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="cv">CV</a>
@@ -40,11 +40,8 @@
             </nav>
         </section>
 
-        <section>
-            <!-- Page Content-->
-            <div class="container-fluid p-0">
-                <section class="resume-section" id="page"></section>
-            </div>
+        <section class="resume-section" id="page">
+            
         </section>
         
     </body>
@@ -77,68 +74,5 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <!-- Functions -->
-    <script>
-        // Collapse Navbar
-        var navbarCollapse = function() {
-            if ($("#mainNav").offset().top > 100) {
-                $("#mainNav").addClass("navbar-shrink");
-            } else {
-                $("#mainNav").removeClass("navbar-shrink");
-            }
-        };
-        navbarCollapse();
-        $(window).scroll(navbarCollapse);
-
-        // Load work.html first
-        $(function (){
-            $("#page").load("work.html");
-        });
-
-        $(function(){
-            $("#work").click(function(){
-                $.ajax({
-                    type: "get",
-                    url: "work.html",
-                    data: "",
-                    dataType: "html",
-                    beforeSend: function() {
-                        $("#page").html("");
-                    },
-                    success: function (response) {
-                        $("#page").html(response);
-                    }
-                });
-            });
-
-            $("#about").click(function(){
-                $.ajax({
-                    type: "get",
-                    url: "about.html",
-                    data: "",
-                    dataType: "html",
-                    beforeSend: function() {
-                        $("#page").html("");
-                    },
-                    success: function (response) {
-                        $("#page").html(response);
-                    }
-                });
-            });
-
-            $("#cv").click(function(){
-                $.ajax({
-                    type: "get",
-                    url: "cv.html",
-                    data: "",
-                    dataType: "html",
-                    beforeSend: function() {
-                        $("#page").html("");
-                    },
-                    success: function (response) {
-                        $("#page").html(response);
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="javascripts.js"></script>
 </html>
