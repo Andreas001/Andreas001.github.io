@@ -15,36 +15,41 @@
         <link href="styles.css" rel="stylesheet" />
     </head>
 
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="mainNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block">Andreas Geraldo</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" aria-current="page" id="work">Work</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="about">About</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <body>
+        <section id="page-top">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="mainNav">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                    <span class="d-block">Andreas Geraldo</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" aria-current="page" id="work">Work</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="about">About</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="#" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="cv">CV</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
 
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <section class="resume-section" id="page"></section>
-        </div>
+        <section>
+            <!-- Page Content-->
+            <div class="container-fluid p-0">
+                <section class="resume-section" id="page"></section>
+            </div>
+        </section>
+        
     </body>
 
-    <footer class="footer text-center">
+    <footer id="page-bottom" class="footer text-center">
         <div class="container">
             <div class="row">
                 <!-- Footer Location-->
@@ -120,10 +125,10 @@
                 });
             });
 
-            $("#contact").click(function(){
+            $("#cv").click(function(){
                 $.ajax({
                     type: "get",
-                    url: "contact.html",
+                    url: "cv.html",
                     data: "",
                     dataType: "html",
                     beforeSend: function() {
